@@ -3,7 +3,7 @@ require "json"
 require "httparty"
 include Facebook::Messenger
 
-API_URL = "https://maps.googleapis.com/maps/api/geocode/json?address=AIzaSyA_EJci3a2E_w2WTFRkX6PCUjrKyXE0shc"
+API_URL = "https://maps.googleapis.com/maps/api/geocode/json?address="
 
 Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 
