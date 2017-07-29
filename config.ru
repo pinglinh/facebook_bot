@@ -1,5 +1,5 @@
 require "./app"
-# require_relative "bot"
+require_relative "bot"
 
 map("/webhook") do
   run Sinatra::Application
