@@ -3,19 +3,20 @@ require "json"
 require "httparty"
 include Facebook::Messenger
 
-map_url = "https://maps.googleapis.com/maps/api/geocode/json"
+# map_url = "https://maps.googleapis.com/maps/api/geocode/json"
 
 Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 
 Bot.on :message do |message|
   puts "Received '#{message.inspect}' from #{message.sender}"
+  map_url = "https://maps.googleapis.com/maps/api/geocode/json"
   parsed_response = get_parsed_response(map_url, message.text)
   message.type
   coords = extract_coordinates(parsed_response)
   message.reply(text: coords)
 end
 
-def get_parsed_response(url, query)
+def get_parsed_response(url, location)
   response = HTTParty.get(url,
     query: {
       address: location,
