@@ -11,7 +11,7 @@ Bot.on :message do |message|
   puts "Received '#{message.inspect}' from #{message.sender}"
   map_url = "https://maps.googleapis.com/maps/api/geocode/json"
   parsed_response = get_parsed_response(map_url, message.text)
-  message.type
+  # message.type
   coords = extract_coordinates(parsed_response)
   message.reply(text: coords)
 end
