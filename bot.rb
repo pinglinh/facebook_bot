@@ -28,7 +28,10 @@ end
 
 def extract_coordinates(parsed)
   # parsed["results"].first["geometry"]["location"]
+  parsed["results"][0]["geometry"]["location"]["lat"].round(1).to_s + ", " +
+  parsed["results"][0]["geometry"]["location"]["lng"].round(1).to_s
 
-  parsed["results"][0]["geometry"]["bounds"]["northeast"]["lat"].round(1).to_s + ", " +
-    parsed["results"][0]["geometry"]["bounds"]["northeast"]["lng"].round(1).to_s
+
+  # parsed["results"][0]["geometry"]["bounds"]["northeast"]["lat"].round(1).to_s + ", " +
+  #   parsed["results"][0]["geometry"]["bounds"]["northeast"]["lng"].round(1).to_s
 end
