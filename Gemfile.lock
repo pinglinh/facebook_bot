@@ -1,31 +1,34 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     dotenv (2.2.1)
-    facebook-messenger (1.0.0)
+    facebook-messenger (0.11.1)
       httparty (~> 0.13, >= 0.13.7)
       rack (>= 1.6.4)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
     multi_xml (0.6.0)
-    mustermann (1.0.0)
-    rack (2.0.3)
-    rack-protection (2.0.0)
+    public_suffix (2.0.5)
+    rack (1.6.5)
+    rack-protection (1.5.3)
       rack
-    sinatra (2.0.0)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.0)
-      tilt (~> 2.0)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
     tilt (2.0.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   dotenv
-  facebook-messenger
+  facebook-messenger (= 0.11.1)
   httparty
+  rack (= 1.6.5)
   sinatra
 
 BUNDLED WITH
